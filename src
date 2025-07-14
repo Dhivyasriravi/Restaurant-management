@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chit Chat Restaurant</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+      background-image: url('https://images.unsplash.com/photo-1676215500243-bf3053b08299?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8d2hpdGUlMjBjb2x1cmVkJTIwZm9vZCUyMGNvdXJ0fGVufDB8fDB8fHww');
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #222;
+      padding: 10px 30px;
+    }
+
+    .navbar .logo {
+      color: #00aced;
+      font-weight: bold;
+      font-size: 22px;
+    }
+
+    .navbar .logo span {
+      color: #ff6600;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 15px;
+    }
+
+    .navbar a:hover {
+      color: #ff6600;
+    }
+
+    .hero button {
+      padding: 12px 25px;
+      background-color: red;
+      border: none;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .hero button:hover {
+      background-color: darkred;
+    }
+
+    .reservation-form input, 
+    .reservation-form select, 
+    .reservation-form button {
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 10px;
+      font-size: 15px;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #222;
+      color: white;
+      padding: 20px;
+    }
+
+    footer a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: white;
+      font-size: 20px;
+    }
+
+    .section {
+      padding: 20px;
+      background-color: rgba(255,255,255,0.8);
+      margin: 20px;
+      border-radius: 8px;
+    }
+
+    .menu-item {
+      margin: 5px 0;
+    }
+
+    img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="navbar">
+  <div class="logo">Chit Chat <span>Restaurant</span></div>
+  <div class="nav-links">
+    <a href="#home">HOME</a>
+    <a href="#about">ABOUT US</a>
+    <a href="#menu">MENU</a>
+    <a href="#gallery">GALLERY</a>
+    <a href="#reservation">RESERVATION</a>
+    <a href="#location">LOCATION</a>
+    <a href="#blog">BLOG</a>
+  </div>
+</div>
+
+<section class="hero" id="home">
+  <h2>Welcome To</h2>
+  <h1 style="color:red; font-weight:bold; font-size:2em;">CHIT CHAT RESTAURANT</h1>
+  <button onclick="document.getElementById('reservation').scrollIntoView()">Book a Table</button>
+</section>
+
+<section class="section" id="about">
+  <h2>About Us</h2>
+  <p>Chit Chat Flavours brings you a fine dining experience with a touch of elegance and culinary passion.</p>
+</section>
+
+<section class="section" id="menu">
+  <h2>Menu</h2>
+  <h3>Today's Special!!</h3>
+  <div class="menu-items">
+    <div class="menu-item">Paneer Tikka - Vegetarian</div>
+    <div class="menu-item">Butter Chicken - Non-Veg</div>
+    <div class="menu-item">Chef's Special Pasta</div>
+    <div class="menu-item">Chicken Burger</div>
+    <div class="menu-item">Butter Naan</div>
+  </div>
+</section>
+
+<section class="section" id="gallery">
+  <h2>Gallery Images</h2>
+  <h3>Foods</h3>
+  <img src="https://media.istockphoto.com/id/1316145932/photo/table-top-view-of-spicy-food.jpg?s=612x612&w=0&k=20&c=eaKRSIAoRGHMibSfahMyQS6iFADyVy1pnPdy1O5rZ98=" alt="Spicy Food">
+
+  <h3>Dining</h3>
+  <img src="https://images.unsplash.com/photo-1574966739987-65e38db0f7ce?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZGluaW5nfGVufDB8fDB8fHww" alt="Dining Area">
+
+  <h3>Infrastructure</h3>
+  <img src="https://images.unsplash.com/photo-1613946069412-38f7f1ff0b65?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGRpbmluZ3xlbnwwfHwwfHx8MA%3D%3D" alt="Restaurant Interior">
+
+  <h3>Drinks</h3>
+  <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZHJpbmtzfGVufDB8fDB8fHww" alt="Drinks">
+</section>
+
+<section class="section" id="reservation">
+  <h2>Reserve a Table</h2>
+  <form class="reservation-form" onsubmit="return confirmReservation()">
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <input type="tel" placeholder="Contact Number" required>
+    <input type="date" required>
+    <input type="time" required>
+    <select required>
+      <option value="">Guests</option>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4+</option>
+    </select>
+    <button type="submit">Confirm Reservation</button>
+  </form>
+</section>
+
+<footer>
+  <p>Follow Us</p>
+  <a href="#" title="Facebook">&#x1F464;</a>
+  <a href="#" title="Instagram">&#x1F4F7;</a>
+  <a href="#" title="Twitter">&#x1F426;</a>
+</footer>
+
+<script>
+  function confirmReservation() {
+    alert("Reservation Confirmed! Thank you for choosing Chit Chat Restaurant.");
+    return false;
+  }
+</script>
+
+</body>
+</html>
